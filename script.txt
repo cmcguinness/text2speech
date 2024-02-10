@@ -1,0 +1,54 @@
+# Intro / onyx
+Ozymandias.
+
+I met a traveller from an antique land, who said
+
+Two vast and trunkless legs of stone stand in the desert.
+
+Near them, on the sand, half sunk a shattered visage lies, whose frown,
+and wrinkled lip, and sneer of cold command,
+– tell that its sculptor well those passions read,
+– which yet survive, stamped on these lifeless things,
+The hand that mocked them, and the heart that fed.
+
+And on the pedestal, these words appear:
+
+My name is Ozymandias, King of Kings;
+Look on my Works, ye Mighty, and despair!
+
+Nothing beside remains.
+
+Round the decay of that colossal Wreck, boundless and bare, the lone and level sands stretch far away.
+
+Percy Bysshe Shelley, 1818
+
+# Article / shimmer
+What happens when an irresistible force meets an unmovable object?
+We’re going to find out, as Sam Altman has decided that he wants $5 to 7 trillion
+to build chips for the next phase of Generative AI.
+
+It’s understandable why he thinks it’s going to take that much dough to bake his chips.
+As I pointed out in December, given the current production capacities for high end GPUs,
+GPT-4 (and similar) are going to be the best we could expect to see from Generative AI
+for a few years.
+
+But I guess $7 Trillion could overcome that barrier.
+
+Still, that’s a breathtaking amount of money.
+Were I to loan you that kind of money for a mortgage, at current interest rates,
+you’d need to pay ~$600 billion every year to service the debt.
+That’s on a par with the revenue of Microsoft and Apple combined,
+and about 10 times that of TSMC, the company that makes 90% of NVIDIA’s chips.
+
+Financial issues aside, the roadblocks in trying to massively increase the
+production of AI chips are numerous:
+
+1. There is only one company in The Netherlands that produces the extreme ultraviolet lithography machines required for these kinds of chips. They made about 140 of them last year, and have a backlog of over a year. They’ve come up with the next generation (High Numerical Aperture Extreme Ultraviolet), but Intel is at the front of the line for that.
+2. It takes about 3 years to build a modern chip manufacturing plant.
+3. Two thirds of the <10nm fabs are in Taiwan, the rest are in South Korea. Taiwan has certain security challenges.
+
+Normally, I wouldn’t bet against someone like Sam Altman.
+
+This time, I will: I stand by my prediction from December: we’re not going to see an order of magnitude increase in the power of LLMs for several years because it would require hardware that does not, and will not, exist anytime soon. And should he get the funding he seeks, by the time he is producing chips in quantity, they won’t be that unique as the industry will have evolved as well.
+
+Of course, it could just be a ploy to get better priority and pricing out of NVIDIA!
