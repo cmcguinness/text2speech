@@ -1,67 +1,30 @@
-from datetime import datetime as dt
-from collections import OrderedDict
-from TTS import TTS
-from openaiTTS import OpenaiTTS
+"""
 
+# main.py
+The "user interface" to the program
 
-class Script:
+## Tasks
 
-    def __init__(self, script_file, _default_voice = 'echo'):
-        self.default_voice = _default_voice
+* Get the name of the text file holding the script
+* Read it in via the Script class
+* Present the list of sections
+* Ask the user which section to convert to speach (or all of them)
+* Trigger the conversion
 
-        with open(script_file, 'r') as f:
-            script = f.read()
+"""
 
-        lines = script.split('\n')
-        lines.append('# E-O-F')
-
-        self.sections = OrderedDict()
-        self.voices = []
-
-        curname = 'Unnamed Section'
-        curtext = ''
-
-        for l in lines:
-            if l.startswith('#'):
-                if len(curtext) > 0:
-                    self.sections[curname] = curtext
-                curtext = ''
-                l = l[1:].strip()
-                if l.find('/') >= 0:
-                    curname = l[:l.find('/')].strip()
-                    self.voices.append(l[l.find('/')+1:].strip())
-                else:
-                    curname = l[1:].strip()
-                    self.voices.append(self.default_voice)
-                continue
-
-            curtext += l + '\n'
-
-    def get_sections(self):
-        return self.sections.keys()
-
-    def get_section(self, name):
-        return self.sections[name]
-
-    def speechify(self, engine:TTS, which):
-
-        name = list(self.sections.keys())[which]
-        text = self.sections[name]
-        voice = self.voices[which]
-
-        suffix = dt.now().strftime("%Y-%m-%d-%H-%M-%S")
-
-        engine.speechify(text, f"outputs/{name}-{suffix}.mp3", voice)
-
-
-
+from script import Script
 
 
 if __name__ == "__main__":
 
-    engine = OpenaiTTS()
+    # Default to script.txt because that's the same I provide!
+    sname = input('Script name [script.txt]: ')
+    if sname == '':
+        sname = 'script.txt'
 
-    script = Script("script.txt")
+    # See script.py for a discussion on the file format
+    script = Script(sname)
 
     print('Which section to covert?')
 
@@ -72,11 +35,13 @@ if __name__ == "__main__":
 
     which = input('Enter a number or all to process all sections: ')
 
+    quality = input('High/Low TTS quality? [h/L]')
+
     if which == 'all':
         for i,k in enumerate(sections):
             print(f'Processing section {k}')
-            script.speechify(engine, i)
+            script.speechify(i, quality)
     else:
-        script.speechify(engine, int(which)-1)
+        script.speechify(int(which)-1, quality)
 
     print('Finished.')

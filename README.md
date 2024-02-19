@@ -21,3 +21,5 @@ To run the application, you'll need an OpenAI API Key and to have set the enviro
 The OpenAI TTS interface is very primative, and there's no way to insert explicit instructions
 into the text to inflect the generated voice.  The best I've found is the careful use of
 punctuation, spacing, and blank lines can get it to better speak your text.
+
+Each of the source files contains a better description of how they work.
